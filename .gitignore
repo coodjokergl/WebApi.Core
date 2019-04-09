@@ -263,3 +263,5 @@ __pycache__/
 /MySoftLog.Bin/MySoftLog.Core.xml
 /MySoftLog.Bin/MySoftLog.Model.xml
 /MySoftLog.Bin/MySoftLogModel.xml
+/MySoftLog.Bin/MySoftLog.IRepository.xml
+/MySoftLog.Bin/MySoftLog.IService.xml

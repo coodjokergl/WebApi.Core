@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppService", "AppService", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{03DAA313-F58C-4DDF-9B93-F9170103E696}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysoftLog.DaoShu.Appservice", "MysoftLog.DaoShu.Appservice\MysoftLog.DaoShu.Appservice.csproj", "{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,9 +39,16 @@ Global
 		{6BA2FABF-6EA6-420D-961E-94B893E5B513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA2FABF-6EA6-420D-961E-94B893E5B513}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA2FABF-6EA6-420D-961E-94B893E5B513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11A1718E-30C3-496E-B8FF-5D0DD1218B0C} = {962E9414-68E3-4CC6-82BF-533091D1F1A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7CFAF73-3BE4-4B4F-87A6-979BDF2321F4}

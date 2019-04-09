@@ -4,7 +4,10 @@ using System.Text;
 
 namespace MySoftLog.Model.Entity
 {
-    class ActionMessage
+    /// <summary>
+    /// 操作
+    /// </summary>
+    public class ActionMessage
     {
     }
 }
