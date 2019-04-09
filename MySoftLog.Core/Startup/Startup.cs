@@ -73,8 +73,6 @@ namespace MySoftLog.Core.Startup
         /// <returns></returns>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
             #region log日志注入
 
             services.AddSingleton<ILogHelper,MySoftLog.Core.LogHelper.LogHelper>();

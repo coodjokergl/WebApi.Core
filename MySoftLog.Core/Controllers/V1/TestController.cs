@@ -9,18 +9,18 @@ using MySoftLog.IService;
 namespace MySoftLog.Core.Controllers.V1
 {
     /// <summary>
-    /// 导数工具日志控制器
+    /// api 测试接口
     /// </summary>
     [Produces("application/json")]
     [ApiController]
     [CustomRoute(ApiVersions.V1)]
-    public class DaoShuController : Controller
+    public class TestController : Controller
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="te"></param>
-        public DaoShuController(ITest te)
+        public TestController(ITest te)
         {
             TestService = te;
         }
@@ -33,12 +33,14 @@ namespace MySoftLog.Core.Controllers.V1
         /// <summary>
         /// 测试方法
         /// </summary>
+        /// <param name="user">用户名称</param>
+        /// <param name="pass">密码</param>
         /// <returns></returns>
         [HttpGet]
         [Route("Test")]
-        public string Test()
+        public string Test(string user,string pass)
         {
-            return $@"用户: 1 密码： 2 服务器时间： {TestService.Test()}";
+            return $@"接口：V1 用户: {user} 密码： {pass} 服务器时间： {TestService.Test()}";
         }
     }
 }

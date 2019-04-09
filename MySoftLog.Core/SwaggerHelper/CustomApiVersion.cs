@@ -12,6 +12,11 @@ namespace MySoftLog.Core.SwaggerHelper
         /// <summary>
         /// V1 版本
         /// </summary>
-        V1 = 1
+        V1,
+
+        /// <summary>
+        /// V2 版本
+        /// </summary>
+        V2
     }
 }

@@ -6,7 +6,7 @@ namespace MysoftLog.DaoShu
     /// <summary>
     /// 测试服务
     /// </summary>
-    public class TestAppService : ITest
+    public class TestV1 : ITest
     {
         /// <summary>
         /// 测试
