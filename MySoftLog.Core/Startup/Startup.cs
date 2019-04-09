@@ -74,6 +74,8 @@ namespace MySoftLog.Core.Startup
         /// <returns></returns>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
             #region log日志注入
 
             services.AddSingleton<ILogHelper,LogHelper>();
@@ -223,14 +225,14 @@ namespace MySoftLog.Core.Startup
                 //根据版本名称倒序 遍历展示
                 typeof(ApiVersions).GetEnumNames().OrderByDescending(e => e).ToList().ForEach(version =>
                 {
-                    c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{version}");//{ConstString.AppName} 
+                    c.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{ConstString.AppName} {version}");//{ConstString.AppName} 
                 });
 
                 //注入汉化脚本
                 //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
 
                 //c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("index.html");
-                c.RoutePrefix = ""; 
+                //c.RoutePrefix = ""; 
             });
             #endregion
 

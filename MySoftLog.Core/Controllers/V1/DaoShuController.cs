@@ -12,9 +12,8 @@ namespace MySoftLog.Core.Controllers.V1
     /// 导数工具日志控制器
     /// </summary>
     [Produces("application/json")]
-    //[ApiController]
-    //[CustomRoute(ApiVersions.V1)]
-    [Route("api/DaoShu")]
+    [ApiController]
+    [CustomRoute(ApiVersions.V1)]
     public class DaoShuController : Controller
     {
         /// <summary>
