@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using MySoftLog.Core.Log;
+using MySoftLog.Core.LogHelper;
 
 namespace MySoftLog.Core.Filter
 {

@@ -22,8 +22,4 @@
     <DocumentationFile>..\MySoftLog.Bin\MySoftLog.Model.xml</DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="DT0\" />
-  </ItemGroup>
-
 </Project>

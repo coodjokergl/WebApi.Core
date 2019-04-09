@@ -21,7 +21,7 @@ namespace MySoftLog.Core.SwaggerHelper
         /// 自定义路由构造函数，继承基类路由
         /// </summary>
         /// <param name="actionName"></param>
-        public CustomRouteAttribute(string actionName = "[action]") : base("/api/{version}/[controller]/" + actionName)
+        public CustomRouteAttribute(string actionName = "[action]") : base("/api/[controller]/" + actionName)
         {
         }
         /// <summary>

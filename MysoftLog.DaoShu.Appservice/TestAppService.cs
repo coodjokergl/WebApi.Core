@@ -1,7 +1,7 @@
 ﻿using System;
-using MySoftLog.IService.DaoShu;
+using MySoftLog.IService;
 
-namespace MysoftLog.DaoShu.Appservice
+namespace MysoftLog.DaoShu
 {
     /// <summary>
     /// 测试服务

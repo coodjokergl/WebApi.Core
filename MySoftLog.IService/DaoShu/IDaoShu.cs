@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MySoftLog.Model.DT0;
 
 namespace MySoftLog.IService.DaoShu
 {
     /// <summary>
-    /// 测试接口
+    /// 
     /// </summary>
-    public interface ITest : IServiceBase
+    public interface IDaoShu :IServiceBase
     {
         /// <summary>
-        /// 测试接口
+        /// 查询客户信息
         /// </summary>
         /// <returns></returns>
-        string Test();
+        List<CustomerInfoDTO> SearchCustomerInfo();
     }
 }

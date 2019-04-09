@@ -4,7 +4,7 @@ using System.Text;
 using Autofac.Core.Activators.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using MySoftLog.Core.SwaggerHelper;
-using MySoftLog.IService.DaoShu;
+using MySoftLog.IService;
 
 namespace MySoftLog.Core.Controllers.V1
 {

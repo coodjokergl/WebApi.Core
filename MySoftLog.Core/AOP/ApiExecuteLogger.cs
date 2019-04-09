@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Castle.DynamicProxy;
-using MySoftLog.Core.Log;
+using MySoftLog.Core.LogHelper;
 
 namespace MySoftLog.Core.AOP
 {

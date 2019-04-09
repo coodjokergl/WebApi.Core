@@ -29,13 +29,12 @@ using Microsoft.IdentityModel.Tokens;
 using MySoftLog.Core.AOP;
 using MySoftLog.Core.Common;
 using MySoftLog.Core.Filter;
-using MySoftLog.Core.Log;
+using MySoftLog.Core.LogHelper;
 using MySoftLog.Core.SwaggerHelper;
 using MySoftLog.IRepository;
 using MySoftLog.IService;
 //using StackExchange.Profiling.Storage;
 using Swashbuckle.AspNetCore.Swagger;
-using LogHelper = MySoftLog.Core.Log.LogHelper;
 
 namespace MySoftLog.Core.Startup
 {
@@ -78,7 +77,7 @@ namespace MySoftLog.Core.Startup
 
             #region log日志注入
 
-            services.AddSingleton<ILogHelper,LogHelper>();
+            services.AddSingleton<ILogHelper,MySoftLog.Core.LogHelper.LogHelper>();
 
             #endregion
 
@@ -147,7 +146,7 @@ namespace MySoftLog.Core.Startup
             var builder = new ContainerBuilder();
 
             //注册一个单例日志组件
-            builder.RegisterType<LogHelper>().As<ILogHelper>().SingleInstance();
+            builder.RegisterType<LogHelper.LogHelper>().As<ILogHelper>().SingleInstance();
 
             #region 带有接口层的服务注入
 

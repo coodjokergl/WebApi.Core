@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySoftLog.IService", "MySof
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySoftLog.IRepository", "MySoftLog.IRepository\MySoftLog.IRepository.csproj", "{6BA2FABF-6EA6-420D-961E-94B893E5B513}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppService", "AppService", "{962E9414-68E3-4CC6-82BF-533091D1F1A5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{962E9414-68E3-4CC6-82BF-533091D1F1A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{03DAA313-F58C-4DDF-9B93-F9170103E696}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysoftLog.DaoShu.Appservice", "MysoftLog.DaoShu.Appservice\MysoftLog.DaoShu.Appservice.csproj", "{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysoftLog.DaoShu", "MysoftLog.DaoShu.Appservice\MysoftLog.DaoShu.csproj", "{11A1718E-30C3-496E-B8FF-5D0DD1218B0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoftLog.Core", "MySoftLog.Core\MySoftLog.Core.csproj", "{EE0DCD34-D8D4-4049-A262-0CB0D981605C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySoftLog.Core", "MySoftLog.Core\MySoftLog.Core.csproj", "{EE0DCD34-D8D4-4049-A262-0CB0D981605C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

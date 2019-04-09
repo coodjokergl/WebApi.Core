@@ -22,4 +22,8 @@
     <DocumentationFile>..\MySoftLog.Bin\MySoftLog.IService.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MySoftLog.Model\MySoftLog.Model.csproj" />
+  </ItemGroup>
+
 </Project>
