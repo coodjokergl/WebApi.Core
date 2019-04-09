@@ -151,6 +151,10 @@ namespace MySoftLog.Core.Startup
 
             #region 带有接口层的服务注入
 
+            
+            var interceptors = GetAssemblyTypes(typeof(IInterceptor));
+            builder.RegisterTypes(interceptors).AsSelf().PropertiesAutowired();
+
             var extendServicePaths = Directory.GetFiles(basePath, @"Mysoft*.dll", SearchOption.AllDirectories);
             foreach (var servicePath in extendServicePaths)
             {
@@ -158,8 +162,8 @@ namespace MySoftLog.Core.Startup
                 var assemblysService = Assembly.LoadFile(servicesDllFile);//直接采用加载文件的方法
 
                 //注入拦截器
-                var interceptors = GetAssemblyTypes(assemblysService,typeof(IInterceptor));
-                builder.RegisterTypes(interceptors).AsSelf().PropertiesAutowired();
+                //var interceptors = GetAssemblyTypes(assemblysService, typeof(IInterceptor));
+                //builder.RegisterTypes(interceptors).AsSelf().AsImplementedInterfaces().PropertiesAutowired();
 
                 //服务注入
                 Type service = typeof(IServiceBase);
@@ -232,7 +236,7 @@ namespace MySoftLog.Core.Startup
                 //c.InjectOnCompleteJavaScript($"/swagger_translator.js");
 
                 //c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("index.html");
-                //c.RoutePrefix = ""; 
+                c.RoutePrefix = ""; 
             });
             #endregion
 

@@ -17,6 +17,15 @@ namespace MySoftLog.Core.Controllers.V1
     public class DaoShuController : Controller
     {
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="te"></param>
+        public DaoShuController(ITest te)
+        {
+            TestService = te;
+        }
+
+        /// <summary>
         /// 服务
         /// </summary>
         public ITest TestService { get; set; }

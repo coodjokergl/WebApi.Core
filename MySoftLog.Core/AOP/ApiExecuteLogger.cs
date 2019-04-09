@@ -26,7 +26,7 @@ namespace MySoftLog.Core.AOP
         /// 拦截器
         /// </summary>
         /// <param name="invocation"></param>
-        public void Intercept(IInvocation invocation)
+        public virtual void Intercept(IInvocation invocation)
         {
             try
             {

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MysoftLog.DaoShu.Appservice</name>
+    </assembly>
+    <members>
+        <member name="T:MysoftLog.DaoShu.Appservice.TestAppService">
+            <summary>
+            测试服务
+            </summary>
+        </member>
+        <member name="M:MysoftLog.DaoShu.Appservice.TestAppService.Test">
+            <summary>
+            测试
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
