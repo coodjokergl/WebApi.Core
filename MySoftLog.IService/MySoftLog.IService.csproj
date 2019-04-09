@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>MysoftLogCode.pfx</AssemblyOriginatorKeyFile>
@@ -12,21 +11,15 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <OutputPath>..\MySoftLog.Bin</OutputPath>
-    <DocumentationFile>..\MySoftLog.Bin\MySoftLog.Core.xml</DocumentationFile>
+    <DocumentationFile>..\MySoftLog.Bin\MySoftLog.IService.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn />
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <NoWarn />
     <OutputPath>..\MySoftLog.Bin</OutputPath>
-    <DocumentationFile>..\MySoftLog.Bin\MySoftLog.Core.xml</DocumentationFile>
+    <DocumentationFile>..\MySoftLog.Bin\MySoftLog.IService.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
-    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
-  </ItemGroup>
 
 </Project>
