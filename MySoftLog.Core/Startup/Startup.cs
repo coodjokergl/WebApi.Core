@@ -27,12 +27,14 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using MySoftLog.Core.AOP;
+using MySoftLog.Core.AutoMapper;
 using MySoftLog.Core.Common;
 using MySoftLog.Core.Filter;
 using MySoftLog.Core.LogHelper;
 using MySoftLog.Core.SwaggerHelper;
 using MySoftLog.IRepository;
 using MySoftLog.IService;
+using MySoftLog.Model;
 //using StackExchange.Profiling.Storage;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -82,6 +84,7 @@ namespace MySoftLog.Core.Startup
             #region Automapper
 
             services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(typeof(AutoModule));
 
             #endregion
 

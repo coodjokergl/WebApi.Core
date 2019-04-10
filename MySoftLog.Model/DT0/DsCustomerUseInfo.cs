@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MySoftLog.Model
+namespace MySoftLog.Model.DT0
 {
     /// <summary>
-    /// 实体数据基类
+    /// 导数应用台账
     /// </summary>
     [Serializable]
-    public class EntityBase
+    public class DsCustomerUseInfo:GridDataDTO<CustomerExceptionDataItemDTO>
     {
     }
 }
