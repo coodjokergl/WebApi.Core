@@ -259,11 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/MySoftLog.Bin/netcoreapp2.1
-/MySoftLog.Bin/MySoftLog.Core.xml
-/MySoftLog.Bin/MySoftLog.Model.xml
-/MySoftLog.Bin/MySoftLogModel.xml
-/MySoftLog.Bin/MySoftLog.IRepository.xml
-/MySoftLog.Bin/MySoftLog.IService.xml
-/MySoftLog.Bin/MysoftLog.DaoShu.Appservice.xml
-/MySoftLog.Bin/MysoftLog.DaoShu.xml
+
+/WebApi.Core/Properties/PublishProfiles
+/WebApi.Bin/netcoreapp2.1
+/WebApi.Bin/WebApi.Core.xml
