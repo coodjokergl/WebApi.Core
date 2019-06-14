@@ -19,13 +19,15 @@ using Microsoft.IdentityModel.Logging;
 //using StackExchange.Profiling.Storage;
 using Swashbuckle.AspNetCore.Swagger;
 using WebApi.Core.AOP;
-using WebApi.Core.AutoMapper;
 using WebApi.Core.Common;
-using WebApi.Core.Filter;
-using WebApi.Core.LogHelper;
+using WebApi.Core.Platform.AOP;
+using WebApi.Core.Platform.AppSettings;
+using WebApi.Core.Platform.AutoMapper;
+using WebApi.Core.Platform.Filter;
+using WebApi.Core.Platform.Log;
+using WebApi.Core.Platform.Swagger;
 using WebApi.Core.Repository;
 using WebApi.Core.Service;
-using WebApi.Core.SwaggerHelper;
 
 namespace WebApi.Core.Startup
 {
@@ -66,7 +68,7 @@ namespace WebApi.Core.Startup
         {
             #region log日志注入
 
-            services.AddSingleton<ILogHelper, LogHelper.LogHelper>();
+            services.AddSingleton<ILogHelper, Platform.Log.LogHelper>();
 
             #endregion
 
@@ -82,7 +84,7 @@ namespace WebApi.Core.Startup
             services.AddCors(c => {
                 c.AddPolicy("LimitRequests", policy => {
                     policy
-                    .WithOrigins(AppSettings.AppSettings.Apps("LimitRequests", "Url"))
+                    .WithOrigins(AppSettings.Apps("LimitRequests", "Url"))
                     .AllowAnyHeader()//Ensures that the policy allows any header.
                     .AllowAnyMethod();
                 });
@@ -115,11 +117,13 @@ namespace WebApi.Core.Startup
 
             #endregion
 
-            #region MVC + GlobalExceptions
+            #region MVC + Filters
 
-            //注入全局异常捕获
+            //注入全局
             services.AddMvc(o => {
-                o.Filters.Add(typeof(GlobalExceptionsFilter));
+                o.Filters.Add(typeof(ExceptionsFilter));
+                o.Filters.Add(typeof(AuthorizationFilter));
+                o.Filters.Add(typeof(ActionFilter));
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             #endregion
@@ -130,7 +134,7 @@ namespace WebApi.Core.Startup
             var builder = new ContainerBuilder();
 
             //注册一个单例日志组件
-            builder.RegisterType<LogHelper.LogHelper>().As<ILogHelper>().SingleInstance();
+            builder.RegisterType<Platform.Log.LogHelper>().As<ILogHelper>().SingleInstance();
 
             #region 带有接口层的服务注入
 

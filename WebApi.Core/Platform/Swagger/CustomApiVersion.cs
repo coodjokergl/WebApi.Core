@@ -1,4 +1,4 @@
-﻿namespace WebApi.Core.SwaggerHelper
+﻿namespace WebApi.Core.Platform.Swagger
 {
     /// <summary>
     /// Api接口版本 自定义

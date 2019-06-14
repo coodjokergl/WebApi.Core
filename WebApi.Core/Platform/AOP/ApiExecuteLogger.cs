@@ -1,8 +1,8 @@
 ﻿using System;
 using Castle.DynamicProxy;
-using WebApi.Core.LogHelper;
+using WebApi.Core.Platform.Log;
 
-namespace WebApi.Core.AOP
+namespace WebApi.Core.Platform.AOP
 {
     /// <summary>
     /// Api 执行日志记录

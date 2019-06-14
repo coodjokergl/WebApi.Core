@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
-namespace WebApi.Core.SwaggerHelper
+namespace WebApi.Core.Platform.Swagger
 {
     /// <summary>
     /// 自定义路由 /api/{version}/[controler]/[action]

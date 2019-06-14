@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 
-namespace WebApi.Core.AppSettings
+namespace WebApi.Core.Platform.AppSettings
 {
     /// <summary>
     /// 程序配置操作类

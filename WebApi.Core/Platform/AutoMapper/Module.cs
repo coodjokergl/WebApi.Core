@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace WebApi.Core.AutoMapper
+namespace WebApi.Core.Platform.AutoMapper
 {
     /// <summary>
     /// 映射

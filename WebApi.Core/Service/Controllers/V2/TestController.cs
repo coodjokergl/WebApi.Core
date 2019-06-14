@@ -1,15 +1,15 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Core.SwaggerHelper;
+using WebApi.Core.Platform.Swagger;
 
-namespace WebApi.Core.Controllers.V1
+namespace WebApi.Core.Service.Controllers.V2
 {
     /// <summary>
     /// api 测试接口
     /// </summary>
     [Produces("application/json")]
     [ApiController]
-    [CustomRoute(ApiVersions.V1)]
+    [CustomRoute(ApiVersions.V2)]
     public class TestController : Controller
     {
         /// <summary>
@@ -18,8 +18,6 @@ namespace WebApi.Core.Controllers.V1
         public TestController()
         {
         }
-
- 
 
         /// <summary>
         /// 测试方法
@@ -31,7 +29,7 @@ namespace WebApi.Core.Controllers.V1
         [Route("Test")]
         public string Test(string user, string pass)
         {
-            return $@"接口：V1 用户: {user} 密码： {pass} 服务器时间： {DateTime.Now}";
+            return $@"接口：V2 用户: {user} 密码： {pass} 服务器时间： {DateTime.Now}";
         }
     }
 }

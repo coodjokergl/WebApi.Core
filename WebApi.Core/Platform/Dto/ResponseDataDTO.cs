@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace WebApi.Core.DT0
+namespace WebApi.Core.Platform.Dto
 {
     /// <summary>
     /// API接口返回值
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ResponseDataDTO<T>
+    public class ResponseDataDto<T>
     {
         /// <summary>
         /// 返回编码 1000 成功 0 失败
@@ -51,9 +51,9 @@ namespace WebApi.Core.DT0
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static ResponseDataDTO<T> ToSuccessResponse<T>(this T data)
+        public static ResponseDataDto<T> ToSuccessResponse<T>(this T data)
         {
-            return new ResponseDataDTO<T>()
+            return new ResponseDataDto<T>()
             {
                 Code = SuccessCode,
                 Msg = "success",
@@ -67,9 +67,9 @@ namespace WebApi.Core.DT0
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static ResponseDataDTO<IEnumerable<T>> ToSuccessResponse<T>(this IEnumerable<T> data) where T : DtoBase
+        public static ResponseDataDto<IEnumerable<T>> ToSuccessResponse<T>(this IEnumerable<T> data) where T : BaseDto
         {
-            return new ResponseDataDTO<IEnumerable<T>>()
+            return new ResponseDataDto<IEnumerable<T>>()
             {
                 Code = SuccessCode,
                 Msg = "success",
@@ -82,9 +82,9 @@ namespace WebApi.Core.DT0
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static ResponseDataDTO<DtoBase> CreateErrorResponse(this string data)
+        public static ResponseDataDto<BaseDto> CreateErrorResponse(this string data)
         {
-            return new ResponseDataDTO<DtoBase>()
+            return new ResponseDataDto<BaseDto>()
             {
                 Code = ErrorCode,
                 Msg = data,

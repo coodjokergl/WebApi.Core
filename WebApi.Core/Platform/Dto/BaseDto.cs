@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 
-namespace WebApi.Core.DT0
+namespace WebApi.Core.Platform.Dto
 {
     /// <summary>
     /// 数据对象基类
     /// </summary>
     [Serializable]
-    public class DtoBase
+    public class BaseDto
     {
         /// <summary>
         /// 获取属性

@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using WebApi.Core.LogHelper;
+using WebApi.Core.Platform.Log;
 
-namespace WebApi.Core.Filter
+namespace WebApi.Core.Platform.Filter
 {
     /// <summary>
-    /// 全局异常错误日志
+    /// 异常错误日志
     /// </summary>
-    public class GlobalExceptionsFilter : IExceptionFilter
+    public class ExceptionsFilter : IExceptionFilter, Microsoft.AspNetCore.Mvc.Filters.IAsyncExceptionFilter
     {
         private readonly IHostingEnvironment _env;
         private readonly ILogHelper _loggerHelper;
@@ -22,7 +23,7 @@ namespace WebApi.Core.Filter
         /// </summary>
         /// <param name="env"></param>
         /// <param name="loggerHelper"></param>
-        public GlobalExceptionsFilter(IHostingEnvironment env, ILogHelper loggerHelper)
+        public ExceptionsFilter(IHostingEnvironment env, ILogHelper loggerHelper)
         {
             _env = env;
             _loggerHelper = loggerHelper;
@@ -34,6 +35,13 @@ namespace WebApi.Core.Filter
         /// <param name="context"></param>
         public void OnException(ExceptionContext context)
         {
+            LogException(context);
+        }
+
+        private void LogException(ExceptionContext context)
+        {
+            if (!context.ExceptionHandled) return;
+
             var json = new JsonErrorResponse();
 
             json.Message = context.Exception.Message;//错误信息
@@ -42,8 +50,20 @@ namespace WebApi.Core.Filter
                 json.DevelopmentMessage = context.Exception.StackTrace;//堆栈信息
             }
             context.Result = new InternalServerErrorObjectResult(json);
-
             _loggerHelper.Error(json.Message, WriteLog(json.Message, context.Exception));
+            context.ExceptionHandled = true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public Task OnExceptionAsync(ExceptionContext context)
+        {
+            return Task.Run(() => {
+                LogException(context);
+            });         
         }
 
         /// <summary>
@@ -75,9 +95,9 @@ namespace WebApi.Core.Filter
     }
 
     /// <summary>
-    /// 
+    /// 返回错误信息
     /// </summary>
-    //返回错误信息
+    [Serializable]
     public class JsonErrorResponse
     {
         /// <summary>
